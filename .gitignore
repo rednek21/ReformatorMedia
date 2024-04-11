@@ -1,0 +1,7 @@
+.vscode/settings.json
+**.pyc
+media/*
+var
+.idea
+__pycache__/
+*.py[cod]
