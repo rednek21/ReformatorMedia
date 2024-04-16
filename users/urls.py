@@ -1,6 +1,6 @@
 from django.urls import path
 
-from api.views import UserListAPIView
+from users.views import UserListAPIView
 
 app_name = 'users'
 
