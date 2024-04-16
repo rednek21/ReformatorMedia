@@ -10,7 +10,7 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=32)
 
     class Meta:
-        db_table = "user"
+        db_table = "users"
         # ordering =
 
     def __str__(self):

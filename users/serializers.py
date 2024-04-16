@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from user.models import User
+from users.models import User
 
 from djoser.serializers import UserSerializer as US
 

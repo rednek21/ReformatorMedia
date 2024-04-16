@@ -53,8 +53,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
 
-    'api',
-    'user',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -167,7 +166,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # User
 
-AUTH_USER_MODEL = "user.User"
+AUTH_USER_MODEL = "users.User"
 
 # DJANGO REST FRAMEWORK
 
@@ -189,7 +188,7 @@ DJOSER = {
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {
-        'user': 'user.serializers.UserSerializer',
+        'users': 'users.serializers.UserSerializer',
     },
 }
 

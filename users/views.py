@@ -3,8 +3,8 @@ from rest_framework.generics import ListAPIView
 
 from django_filters.rest_framework import DjangoFilterBackend
 
-from user.models import User
-from user.serializers import UserSerializer
+from users.models import User
+from users.serializers import UserSerializer
 
 
 class UserListAPIView(ListAPIView):
@@ -22,5 +22,3 @@ class UserListAPIView(ListAPIView):
     permission_classes = [
         permissions.AllowAny
     ]
-
-
