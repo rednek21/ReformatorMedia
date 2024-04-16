@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Тема',
                 'verbose_name_plural': 'Темы',
-                'db_table': 'theme',
+                'db_table': 'themes',
             },
         ),
         migrations.CreateModel(
@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=128)),
                 ('url', models.URLField()),
-                ('theme', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='videos.theme')),
+                ('themes', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='videos.themes')),
             ],
             options={
                 'verbose_name': 'Видео',

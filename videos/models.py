@@ -1,19 +1,6 @@
 from django.db import models
 
-
-# Create your models here.
-
-class Theme(models.Model):
-    title = models.CharField(max_length=64)
-
-    class Meta:
-        db_table = "theme"
-        verbose_name = 'Тема'
-        verbose_name_plural = 'Темы'
-        # ordering =
-
-    def __str__(self):
-        return f'{self.title}'
+from themes.models import Theme
 
 
 class Video(models.Model):

@@ -3,16 +3,16 @@ from rest_framework.generics import ListAPIView, CreateAPIView
 
 from django_filters.rest_framework import DjangoFilterBackend
 
-from .models import Video
-from .serializers import VideoSerializer
+from .models import Theme
+from .serializers import ThemeSerializer
 
 
-class VideoListAPIView(ListAPIView):
-    queryset = Video.objects.all()
-    model = Video
-    serializer_class = VideoSerializer
+class ThemeListAPIView(ListAPIView):
+    queryset = Theme.objects.all()
+    model = Theme
+    serializer_class = ThemeSerializer
 
-    filterset_fields = ['id', 'title', 'themes']
+    filterset_fields = ['id', 'title']
     # search_fields = ['username', 'email']
 
     filter_backends = [
@@ -24,10 +24,8 @@ class VideoListAPIView(ListAPIView):
     ]
 
 
-class VideoCreateAPIView(CreateAPIView):
-    serializer_class = VideoSerializer
+class ThemeCreateAPIView(CreateAPIView):
+    serializer_class = ThemeSerializer
     permission_classes = [
         permissions.AllowAny # После реализации работы с пользователем заменить на самописный permission для редакторов
     ]
-
-
