@@ -12,7 +12,7 @@ class VideoListAPIView(ListAPIView):
     model = Video
     serializer_class = VideoSerializer
 
-    filterset_fields = ['id', 'title', 'themes']
+    filterset_fields = ['id', 'title', 'theme']
     # search_fields = ['username', 'email']
 
     filter_backends = [

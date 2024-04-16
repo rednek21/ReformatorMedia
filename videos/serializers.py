@@ -3,6 +3,7 @@ from .models import Video
 
 
 class VideoSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Video
-        fields = ("id", "title", "themes", "url")
+        fields = ("id", "title", "theme", "url")
