@@ -1,5 +1,5 @@
 from rest_framework import permissions
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, DestroyAPIView, RetrieveUpdateAPIView
 
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -18,6 +18,33 @@ class UserListAPIView(ListAPIView):
     filter_backends = [
         DjangoFilterBackend
     ]
+
+    permission_classes = [
+        permissions.AllowAny
+    ]
+
+
+class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    permission_classes = [
+        permissions.AllowAny
+    ]
+
+
+class UserDestroyAPIView(DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    permission_classes = [
+        permissions.AllowAny
+    ]
+
+
+class UserRetrieveAPIView(RetrieveAPIView):
+    queryset = User.objects.filter(is_active=True)
+    serializer_class = UserSerializer
 
     permission_classes = [
         permissions.AllowAny
