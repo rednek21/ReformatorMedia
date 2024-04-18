@@ -4,9 +4,9 @@ from themes.models import Theme
 
 
 class Video(models.Model):
-    title = models.CharField(max_length=128)
+    title = models.CharField(max_length=128, unique=True)
     theme = models.ForeignKey(to=Theme, on_delete=models.SET_NULL, null=True)
-    url = models.URLField()
+    url = models.URLField(unique=True)
 
     class Meta:
         db_table = "video"

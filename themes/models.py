@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Theme(models.Model):
-    title = models.CharField(max_length=64)
+    title = models.CharField(max_length=64, unique=True)
 
     class Meta:
         db_table = "theme"
