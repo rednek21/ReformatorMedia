@@ -1,4 +1,5 @@
 from rest_framework import permissions
+from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, RetrieveUpdateAPIView, DestroyAPIView
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -11,11 +12,10 @@ class ThemeListAPIView(ListAPIView):
     model = Theme
     serializer_class = ThemeSerializer
 
-    filterset_fields = ['id', 'title']
-    # search_fields = ['username', 'email']
+    search_fields = ['title']
 
     filter_backends = [
-        DjangoFilterBackend
+        SearchFilter
     ]
 
     permission_classes = [
