@@ -1,6 +1,6 @@
 from rest_framework import permissions
 from rest_framework.filters import SearchFilter
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, RetrieveUpdateAPIView, DestroyAPIView
 
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -33,3 +33,28 @@ class VideoCreateAPIView(CreateAPIView):
     ]
 
 
+class ThemeRetrieveAPIView(RetrieveAPIView):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+
+    permission_classes = [
+        permissions.AllowAny
+    ]
+
+
+class ThemeRetrieveUpdateAPIView(RetrieveUpdateAPIView):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+
+    permission_classes = [
+        permissions.AllowAny
+    ]
+
+
+class ThemeDestroyAPIView(DestroyAPIView):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+
+    permission_classes = [
+        permissions.AllowAny
+    ]

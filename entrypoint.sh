@@ -18,6 +18,7 @@ python manage.py migrate
 #python manage.py loaddata contact_info.json
 
 python manage.py test themes.tests.ThemeTest
+python manage.py test videos.tests.VideoTest
 
 if [ "$DEBUG" = "False" ]
 then
