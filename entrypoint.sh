@@ -17,6 +17,8 @@ python manage.py migrate
 #python manage.py loaddata projects.json
 #python manage.py loaddata contact_info.json
 
+python manage.py test themes.tests.ThemeTest
+
 if [ "$DEBUG" = "False" ]
 then
     python manage.py collectstatic --noinput
