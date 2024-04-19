@@ -2,6 +2,7 @@ from rest_framework import permissions
 from rest_framework.generics import ListAPIView, RetrieveAPIView, DestroyAPIView, RetrieveUpdateAPIView
 
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter
 
 from users.models import User
 from users.serializers import UserSerializer
@@ -13,10 +14,11 @@ class UserListAPIView(ListAPIView):
     serializer_class = UserSerializer
 
     filterset_fields = ['id', 'username', 'is_active']
-    # search_fields = ['username', 'email']
+    search_fields = ['username', 'email', 'first_name', 'last_name']
 
     filter_backends = [
-        DjangoFilterBackend
+        DjangoFilterBackend,
+        SearchFilter
     ]
 
     permission_classes = [

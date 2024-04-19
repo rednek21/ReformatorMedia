@@ -1,4 +1,5 @@
 from rest_framework import permissions
+from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView, CreateAPIView
 
 from django_filters.rest_framework import DjangoFilterBackend
@@ -12,11 +13,12 @@ class VideoListAPIView(ListAPIView):
     model = Video
     serializer_class = VideoSerializer
 
-    filterset_fields = ['id', 'title', 'theme']
-    # search_fields = ['username', 'email']
+    filterset_fields = ['theme']
+    search_fields = ['title', 'url']
 
     filter_backends = [
-        DjangoFilterBackend
+        DjangoFilterBackend,
+        SearchFilter
     ]
 
     permission_classes = [
