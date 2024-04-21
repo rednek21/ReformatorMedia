@@ -23,6 +23,7 @@ class UserListAPIView(ListAPIView):
 
     permission_classes = [
         permissions.AllowAny
+        # permissions.IsAuthenticated
     ]
 
 
@@ -49,5 +50,6 @@ class UserRetrieveAPIView(RetrieveAPIView):
     serializer_class = UserSerializer
 
     permission_classes = [
-        permissions.AllowAny
+        # permissions.AllowAny
+        permissions.IsAuthenticated
     ]
