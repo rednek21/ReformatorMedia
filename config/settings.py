@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'users',
     'videos',
     'themes',
+
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -195,6 +197,8 @@ REST_FRAMEWORK = {
         'user': '1000/day'
     },
 
+    # DOCUMENTING
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 DJOSER = {
@@ -245,4 +249,9 @@ SIMPLE_JWT = {
     "TOKEN_BLACKLIST_SERIALIZER": "rest_framework_simplejwt.serializers.TokenBlacklistSerializer",
     "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'ReformatorMedia API',
+
 }
