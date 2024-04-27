@@ -19,6 +19,7 @@ python manage.py migrate
 
 python manage.py test themes.tests.ThemeTest
 python manage.py test videos.tests.VideoTest
+#python manage.py test users.tests.UserTest
 
 if [ "$DEBUG" = "False" ]
 then
