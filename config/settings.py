@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'users',
     'videos',
     'themes',
+    'mailings',
 
     'drf_spectacular',
 ]
@@ -209,6 +210,9 @@ DJOSER = {
     'SERIALIZERS': {
         'users': 'users.serializers.UserSerializer',
     },
+    'EMAIL': {
+        'activation': 'mailings.views.UserActivationEmail'
+    }
 }
 
 SIMPLE_JWT = {
